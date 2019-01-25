@@ -1,11 +1,18 @@
-A React Soundboard (WIP):
+<h1>WIP</h1>
+<h2>A JavaScript sounboard that uses React for the frontend and Node (express) for the backend.</h2>
 
-1. Upload your own sounds and play them
-2. Placeholder installation instructions
-3. In three terminals:
-..*terminal a) cd frontend -> run "npm start"
-..*terminal b) cd backend -> run "PORT=8000 node app.js"
-..*terminal c) cd backend -> run "nodemon app.js"
+- Upload your own sounds and play them
+1. Run command "npm install --save <package>" in directory "backend" to install "cors" and "express-fileupload"
+2. Run command "npm install -g nodemon" in directory "backend"
+3. Run command "npm install" in directory "frontend"
+4. In three terminals: <br/>
+    - terminal a) cd frontend -> run "npm start" <br/>
+    - terminal b) cd backend -> run "PORT=8000 node app.js" <br/>
+    - terminal c) cd backend -> run "nodemon app.js" <br/>
+
+
 
 Notes:
-- Adding more styling, improving installation process
+- In running any of the startup commands, you may run into errors involvingg missing dependencies. Just run "npm install --save <dependency_name>" to resolve the issue.
+- TODO Adding more styling, improving installation process
+
