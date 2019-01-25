@@ -1,4 +1,5 @@
-A React Soundboard (WIP):
+<h1>WIP</h1>
+<h2>A JavaScript sounboard that uses React for the frontend and Node (express) for the backend.</h2>
 
 1. Upload your own sounds and play them
 2. Placeholder installation instructions
