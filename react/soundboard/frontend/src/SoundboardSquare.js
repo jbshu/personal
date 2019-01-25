@@ -37,7 +37,7 @@ class SoundboardSquare extends Component {
 
   render() {
     return (
-      <div className="soundboardSquareMain">
+      <div className="squareMain">
           <form onSubmit= {this.handleUploadSound}>
             <div>
               <input type="file" ref= {(ref) => { this.uploadInput= ref; }}/>
@@ -46,9 +46,9 @@ class SoundboardSquare extends Component {
 					    <input ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Sound name"/>
 				    </div>
             <div>
-              <button>Upload</button>
+              <button id="upload">Upload</button>
             </div>
-            <button onClick= {this.playSound}>Play</button>
+            <button id="play" onClick= {this.playSound}>Play</button>
           </form>
       </div>
     );

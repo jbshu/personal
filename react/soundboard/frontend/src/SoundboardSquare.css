@@ -1,3 +1,62 @@
-.soundboardSquareMain .header input {
+.squareMain form {
   border: 2px solid #9289bf;
+  padding: 10px;
+  width: 200px;
 }
+
+.squareMain input {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.squareMain .container {
+  margin: 3em auto;
+  max-width: 300px;
+  background-color: #EDEDED;
+  border: 1px solid #DFDFDF;
+  border-radius: 5px;
+}
+
+.file-info {
+  font-size: 0.9em;
+}
+
+.browse-btn {
+  background: #03A595;
+  color: #fff;
+  min-height: 35px;
+  padding: 10px;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+
+.browse-btn:hover {
+  background: #4ec0b4;
+}
+
+#fileSelect {
+  display: none;
+}
+
+.squareMain .buttons {
+  padding-top: 5px;
+}
+
+.squareMain #upload{
+  border: 2px solid #9289bf;
+  background-color: #190966;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.squareMain #play{
+  border: 2px solid #9289bf;
+  background-color: #32ce13;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+}
+
+
