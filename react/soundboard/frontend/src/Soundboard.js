@@ -7,8 +7,11 @@ class Soundboard extends Component {
     return(
       
     <div className="soundboardMain">
-    <h1>A React Soundboard</h1>
+    <h1>A React/Node Soundboard</h1>
       <div className="header">
+      <SoundboardSquare/>
+      <SoundboardSquare/>
+      <SoundboardSquare/>
       <SoundboardSquare/>
       </div>
     </div>

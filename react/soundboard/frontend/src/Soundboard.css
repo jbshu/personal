@@ -4,6 +4,10 @@
   border: 2px solid #9289bf;
   width: 255px;
 }
+
+.soundboardMain div {
+  padding: 25px;
+}
 .soundboardMain .header button {
   padding: 10px;
   font-size: 16px;

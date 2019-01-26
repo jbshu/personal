@@ -36,6 +36,8 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "cors": "^2.8.5",
+    "express-fileupload": "^1.1.1-alpha.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   }

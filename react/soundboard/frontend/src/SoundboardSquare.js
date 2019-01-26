@@ -6,7 +6,8 @@ class SoundboardSquare extends Component {
 		super(props);
 
 		this.state= {
-			soundURL: '',
+      soundURL: '',
+      fileName: '',
 		};
 
     this.handleUploadSound= this.handleUploadSound.bind(this);
@@ -20,6 +21,7 @@ class SoundboardSquare extends Component {
 		data.append('file', this.uploadInput.files[0]);
 		data.append('filename', this.fileName.value);
 
+    this.setState( {fileName:this.fileName.value} );
 		fetch('http://localhost:8000/upload', {
 			method: 'POST',
 			body: data,
@@ -27,7 +29,9 @@ class SoundboardSquare extends Component {
 			response.json().then((body) => {
 				this.setState({ soundURL: `http://localhost:8000/${body.file}` });
 			});
-		});
+    });
+    
+    e.preventDefault();
 	}
 
   playSound() {
@@ -39,16 +43,17 @@ class SoundboardSquare extends Component {
     return (
       <div className="squareMain">
           <form onSubmit= {this.handleUploadSound}>
-            <div>
-              <input type="file" ref= {(ref) => { this.uploadInput= ref; }}/>
+            <div id="upload-sound-border">
+              <label for="upload-sound">Choose sound</label>
+                <input id="upload-sound" type="file" ref= {(ref) => { this.uploadInput= ref; }}/>
             </div>
-            <div>
-					    <input ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Sound name"/>
+            <div id="sound-name-border">
+					    <input id= "sound-name" ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Sound name"/>
 				    </div>
-            <div>
+            <div id="buttons-border">
               <button id="upload">Upload</button>
+              <button id="play" onClick= {this.playSound}>Play { this.state.fileName }</button>
             </div>
-            <button id="play" onClick= {this.playSound}>Play</button>
           </form>
       </div>
     );
