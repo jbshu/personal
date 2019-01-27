@@ -8,17 +8,3 @@
 .soundboardMain div {
   padding: 25px;
 }
-.soundboardMain .header button {
-  padding: 10px;
-  font-size: 16px;
-  margin: 10px;
-  margin-right: 0px;
-  background-color: #9289bf;
-  color: #0;
-  border: 2px solid #9289bf;
-}
-.soundboardMain .header button:hover {
-  background-color: #acc4f3;
-  border: 2px solid #acc4f3;
-  cursor: pointer;
-}

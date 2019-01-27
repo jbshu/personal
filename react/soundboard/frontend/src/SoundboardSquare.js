@@ -40,19 +40,29 @@ class SoundboardSquare extends Component {
   }
 
   render() {
+    let chooser;
+    if (this.state.fileName !== '') {
+      chooser= <p>{this.state.filename}</p>;
+    }
+    else {
+      chooser= <div id= "chooser">
+                  <div id="upload-sound-border">
+                  <label id="upload-sound-label" for="upload-sound">Choose sound</label>
+                      <input id="upload-sound" type="file" ref= {(ref) => { this.uploadInput= ref; }}/>
+                  </div>
+                  <div id="sound-name-border">
+                    <input id= "sound-name" ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Sound name"/>
+                  </div>
+                </div>;  
+    }
+
     return (
       <div className="squareMain">
           <form onSubmit= {this.handleUploadSound}>
-            <div id="upload-sound-border">
-              <label for="upload-sound">Choose sound</label>
-                <input id="upload-sound" type="file" ref= {(ref) => { this.uploadInput= ref; }}/>
-            </div>
-            <div id="sound-name-border">
-					    <input id= "sound-name" ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Sound name"/>
-				    </div>
+          {chooser}
             <div id="buttons-border">
               <button id="upload">Upload</button>
-              <button id="play" onClick= {this.playSound}>Play { this.state.fileName }</button>
+              <button type="button" id="play" onClick= {this.playSound}>Play { this.state.fileName }</button>
             </div>
           </form>
       </div>
