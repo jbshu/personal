@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import Slider from './components/Slider';
 import "./SoundboardSquare.css";
+import 'react-rangeslider/lib/index.css';
 
 class SoundboardSquare extends Component {
   constructor(props) {
@@ -8,9 +10,11 @@ class SoundboardSquare extends Component {
 		this.state= {
       soundURL: '',
       fileName: '',
+      volume: 100,
 		};
 
     this.handleUploadSound= this.handleUploadSound.bind(this);
+    this.volumeChange= this.volumeChange.bind(this);
     this.playSound= this.playSound.bind(this);
 	}
 
@@ -34,8 +38,13 @@ class SoundboardSquare extends Component {
     e.preventDefault();
 	}
 
+  volumeChange(val) {
+    this.setState( {volume: val});
+  }
+
   playSound() {
     var audio= new Audio(this.state.soundURL);
+    audio.volume= this.state.volume;
     audio.play();
   }
 
@@ -51,7 +60,7 @@ class SoundboardSquare extends Component {
                       <input id="upload-sound" type="file" ref= {(ref) => { this.uploadInput= ref; }}/>
                   </div>
                   <div id="sound-name-border">
-                    <input id= "sound-name" ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Sound name"/>
+                    <input id= "sound-name" ref={(ref) => { this.value = ref; }} type="text" placeholder="Sound name"/>
                   </div>
                 </div>;  
     }
@@ -64,10 +73,14 @@ class SoundboardSquare extends Component {
               <button id="upload">Upload</button>
               <button type="button" id="play" onClick= {this.playSound}>Play { this.state.fileName }</button>
             </div>
+            
           </form>
+          <Slider value={this.state.volume} max="100" onChange={this.volumeChange}/>
+          
       </div>
     );
-  }
+  }  
 };
+
 
 export default SoundboardSquare;
