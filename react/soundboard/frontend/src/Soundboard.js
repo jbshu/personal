@@ -3,6 +3,7 @@ import SoundboardSquare from "./SoundboardSquare";
 import "./Soundboard.css";
 
 class Soundboard extends Component {
+  //TODO: add button for dynamically spawning more squares
   render() {
     return(
       

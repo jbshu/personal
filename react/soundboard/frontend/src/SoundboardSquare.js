@@ -26,6 +26,8 @@ class SoundboardSquare extends Component {
 		data.append('filename', this.fileName.value);
 
     this.setState( {fileName:this.fileName.value} );
+
+    //send data to node backend, save url in state
 		fetch('http://localhost:8000/upload', {
 			method: 'POST',
 			body: data,
@@ -38,6 +40,7 @@ class SoundboardSquare extends Component {
     e.preventDefault();
 	}
 
+  //used by Slider
   volumeChange(e) {
     this.setState( {volume: parseFloat(e.target.value)} );
   }
@@ -50,6 +53,9 @@ class SoundboardSquare extends Component {
 
   render() {
     let chooser;
+
+    //Only render upload dialogue if the square does not have a current sound
+    //TODO: add support for swapping sounds
     if (this.state.fileName !== '') {
       chooser= <p>{this.state.filename}</p>;
     }

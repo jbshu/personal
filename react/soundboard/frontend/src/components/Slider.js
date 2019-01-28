@@ -1,8 +1,10 @@
 import React, { Component } from "react"; 
-//import "./Slider.css";
+//import "./Slider.css"; 
 
+//Volume slider
 class Slider extends Component {
   render() {
+    //onChange changes parent volume
     return(
       
     <label className="sliderContainer">Volume
