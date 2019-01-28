@@ -10,7 +10,7 @@ class SoundboardSquare extends Component {
 		this.state= {
       soundURL: '',
       fileName: '',
-      volume: 100,
+      volume: 0.5,
 		};
 
     this.handleUploadSound= this.handleUploadSound.bind(this);
@@ -38,8 +38,8 @@ class SoundboardSquare extends Component {
     e.preventDefault();
 	}
 
-  volumeChange(val) {
-    this.setState( {volume: val});
+  volumeChange(e) {
+    this.setState( {volume: parseFloat(e.target.value)} );
   }
 
   playSound() {
@@ -60,7 +60,7 @@ class SoundboardSquare extends Component {
                       <input id="upload-sound" type="file" ref= {(ref) => { this.uploadInput= ref; }}/>
                   </div>
                   <div id="sound-name-border">
-                    <input id= "sound-name" ref={(ref) => { this.value = ref; }} type="text" placeholder="Sound name"/>
+                    <input id= "sound-name" ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Sound name"/>
                   </div>
                 </div>;  
     }
@@ -72,11 +72,10 @@ class SoundboardSquare extends Component {
             <div id="buttons-border">
               <button id="upload">Upload</button>
               <button type="button" id="play" onClick= {this.playSound}>Play { this.state.fileName }</button>
-            </div>
-            
+            </div> 
+             <Slider onChange={this.volumeChange} />
           </form>
-          <Slider value={this.state.volume} max="100" onChange={this.volumeChange}/>
-          
+               
       </div>
     );
   }  
