@@ -1,5 +1,5 @@
 import React, { Component } from "react"; 
-//import "./Slider.css"; 
+import "./Slider.css"; 
 
 //Volume slider
 class Slider extends Component {
@@ -7,9 +7,11 @@ class Slider extends Component {
     //onChange changes parent volume
     return(
       
-    <label className="sliderContainer">Volume
-        <input type="range" min="0" max="1" step="0.05" onChange={this.props.onChange} value={this.props.value} className="sliderMain"></input>
-    </label>
+    <div className="sliderContainer">
+      <label id="sliderLabel">{this.props.name}
+        <input type="range" min={this.props.min} max={this.props.max} step={this.props.step} onChange={this.props.onChange} value={this.props.value} className="sliderMain"></input>
+      </label>
+    </div>
     );
   }
 

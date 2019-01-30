@@ -1,80 +1,18 @@
-.squareMain form {
-  border: 2px solid #000000;
-  border-radius: 5px;
-  background-color: #9289bf00;
-  padding: 10px;
-  font-family: "Helvetica";
-  width: 5000;
+.squareMain {
+  display: inline-flex;
+  padding: 2px;
 }
 
-div {
-  display: inline;
+.squareMain .squareForm {
+  border: 3px solid black;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.589);
 }
 
-.squareMain input {
-  padding-bottom: 5px;
-  padding-top: 5px;
-}
-
-.squareMain input[type=text] {
-  display: inline;
-  background-color: #DFDFDF;
-  border: 2px solid #000000;
-  color: black;
-  border-radius: 8px;
-}
-
-.squareMain #upload-sound-label {
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 5px;
-  padding: 10px;
-}
-
-.squareMain label {
-  display: inline;
-  padding: 5px;
-  border-radius: 8px;
-  background-color: #18096683;
-  color: white;
-}
-
-.squareMain label:hover {
-  background-color: #190966;
-}
-
-.squareMain label:active {
-  background-color: #ffffff;
-}
-
-#upload-sound {
-  display: none;
-}
-
-.squareMain button {
-  padding: 5px;
-  border: 2px solid #000000;
-  border-radius: 5px;
-}
-
-.squareMain #buttons-border button:hover {
-  background-color: #DFDFDF;
-}
-
-.squareMain #buttons-border button:active {
-  background-color: rgb(255, 0, 0);
-}
-
-.squareMain #upload{
-  background-color: #18096683;
-  color: rgb(255, 255, 255);
-  display: inline-block;
-  margin-right: 20px;
-}
-
-.squareMain #play{
-  background-color: #00ff00a9;
-  color: rgb(0, 0, 0);
-  display: inline-block;
+.squareMain .chooser {
+  border: 3px solid black;
+  border-radius: 6px;
+  margin: 15px 15px 5px 15px;
 }
 
 

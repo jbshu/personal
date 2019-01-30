@@ -11,10 +11,12 @@ class SoundboardSquare extends Component {
       soundURL: '',
       fileName: '',
       volume: 0.5,
+      speed: 1,
 		};
 
     this.handleUploadSound= this.handleUploadSound.bind(this);
     this.volumeChange= this.volumeChange.bind(this);
+    this.speedChange= this.speedChange.bind(this);
     this.playSound= this.playSound.bind(this);
 	}
 
@@ -45,9 +47,15 @@ class SoundboardSquare extends Component {
     this.setState( {volume: parseFloat(e.target.value)} );
   }
 
+  //used by Slider
+  speedChange(e) {
+    this.setState( {speed: parseFloat(e.target.value)} );
+  }
+
   playSound() {
     var audio= new Audio(this.state.soundURL);
     audio.volume= this.state.volume;
+    audio.playbackRate= this.state.speed;
     audio.play();
   }
 
@@ -60,26 +68,28 @@ class SoundboardSquare extends Component {
       chooser= <p>{this.state.filename}</p>;
     }
     else {
-      chooser= <div id= "chooser">
+      chooser= <div className= "chooser">
                   <div id="upload-sound-border">
-                  <label id="upload-sound-label" for="upload-sound">Choose sound</label>
+                    <label id="upload-sound-label" for="upload-sound">Choose sound
                       <input id="upload-sound" type="file" ref= {(ref) => { this.uploadInput= ref; }}/>
+                    </label>
                   </div>
                   <div id="sound-name-border">
                     <input id= "sound-name" ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Sound name"/>
                   </div>
+                  <button id="upload">Upload</button>
                 </div>;  
     }
 
     return (
       <div className="squareMain">
-          <form onSubmit= {this.handleUploadSound}>
+          <form className="squareForm" onSubmit= {this.handleUploadSound}>
           {chooser}
-            <div id="buttons-border">
-              <button id="upload">Upload</button>
+            <div className="play-container">
               <button type="button" id="play" onClick= {this.playSound}>Play { this.state.fileName }</button>
             </div> 
-             <Slider onChange={this.volumeChange} />
+             <Slider name="Volume" min="0" max="1" step="0.05" onChange={this.volumeChange} />
+             <Slider name="Speed" min="0.2" max="2" step="0.2" onChange={this.speedChange} />
           </form>
                
       </div>
