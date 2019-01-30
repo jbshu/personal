@@ -1,11 +1,5 @@
-body {
-  background: linear-gradient(to bottom right, 
-  rgba(250, 130, 130, 0.356), 
-  rgba(236, 130, 250, 0.267) 80%) no-repeat;
-}
-
-
-.soundboardMain div {
+.soundboardMain {
   padding: 25px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
 }
 

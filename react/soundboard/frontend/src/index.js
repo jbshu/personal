@@ -6,7 +6,7 @@ import "./index.css";
 var destination = document.querySelector("#container");
 
 ReactDOM.render(
-    <div>
+    <div className="container"> 
         <Soundboard />
     </div>,
     destination

@@ -1,8 +1,9 @@
-body {
-  padding: 50px;
-  background-color: #white;
-  font-family: sans-serif;
-}
-#container {
-  display: flex;
+html {
+  background: linear-gradient(to bottom right, 
+  rgba(250, 130, 130, 0.356), 
+  rgba(236, 130, 250, 0.267) 80%) no-repeat;
+  padding: 20px;
+  background-size: cover;
+  -webkit-background-size: cover;
+  height: 100%;
 }

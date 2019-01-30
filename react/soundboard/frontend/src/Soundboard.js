@@ -10,10 +10,10 @@ class Soundboard extends Component {
     <div className="soundboardMain">
       <h1>A React/Node Soundboard</h1>
         <div className="header">
-          <SoundboardSquare className="square"/>
-          <SoundboardSquare className="square"/>
-          <SoundboardSquare className="square"/>
-          <SoundboardSquare className="square"/>
+          <SoundboardSquare />
+          <SoundboardSquare />
+          <SoundboardSquare />
+          <SoundboardSquare />
         </div>
     </div>
     );

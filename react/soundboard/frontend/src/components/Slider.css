@@ -1,10 +1,12 @@
 .sliderContainer #sliderLabel {
+  display: inline-flex;
   border-color: transparent;
   appearance: none;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 input[type=range] {
+  display: inline-flex;
     -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
     width: 100%; /* Specific width is required for Firefox. */
     background: transparent; /* Otherwise white in Chrome */
@@ -40,7 +42,8 @@ input[type=range]::-webkit-slider-thumb {
     cursor: pointer;
     margin-top: -4px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
     box-shadow: 0px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
-}
+  display: inline-flex;
+  }
   
 /* All the same stuff for Firefox */
 input[type=range]::-moz-range-thumb {

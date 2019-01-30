@@ -65,19 +65,22 @@ class SoundboardSquare extends Component {
     //Only render upload dialogue if the square does not have a current sound
     //TODO: add support for swapping sounds
     if (this.state.fileName !== '') {
-      chooser= <p>{this.state.filename}</p>;
+      chooser= <div id="sound-name-display-border">
+                  <label id="sound-name-display">{this.state.fileName}</label>
+                </div>
     }
     else {
       chooser= <div className= "chooser">
-                  <div id="upload-sound-border">
-                    <label id="upload-sound-label" for="upload-sound">Choose sound
-                      <input id="upload-sound" type="file" ref= {(ref) => { this.uploadInput= ref; }}/>
-                    </label>
+                  <div id="choose-sound-border">
+                    <label id="choose-sound-label" for="choose-sound">Choose Sound</label>
+                      <input id="choose-sound" type="file" ref= {(ref) => { this.uploadInput= ref; }}/>
                   </div>
                   <div id="sound-name-border">
                     <input id= "sound-name" ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Sound name"/>
                   </div>
-                  <button id="upload">Upload</button>
+                  <div id="upload-border">
+                    <button id="upload">Upload</button>
+                  </div>
                 </div>;  
     }
 
@@ -85,11 +88,15 @@ class SoundboardSquare extends Component {
       <div className="squareMain">
           <form className="squareForm" onSubmit= {this.handleUploadSound}>
           {chooser}
-            <div className="play-container">
-              <button type="button" id="play" onClick= {this.playSound}>Play { this.state.fileName }</button>
-            </div> 
-             <Slider name="Volume" min="0" max="1" step="0.05" onChange={this.volumeChange} />
-             <Slider name="Speed" min="0.2" max="2" step="0.2" onChange={this.speedChange} />
+            <div className="controls-container">
+              <div id="slider-container">
+                <Slider name="Volume" min="0" max="1" step="0.05" onChange={this.volumeChange} />
+                <Slider name="Speed" min="0.2" max="2" step="0.2" onChange={this.speedChange} />
+              </div>
+              <div id="play-border">
+                <button type="button" id="play" onClick= {this.playSound}></button>
+              </div>
+            </div>
           </form>
                
       </div>
