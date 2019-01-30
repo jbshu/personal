@@ -3,3 +3,25 @@
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
 }
 
+#spawn-border {
+  display: inline-flex;
+}
+#remove-border {
+  display: inline-flex;
+  padding-left: 15px;
+}
+#spawn-square {
+  display: inline-block;
+  background-color:white;
+  border-radius: 6px;
+  color: rgb(88, 88, 88);
+  padding: 2px;
+}
+
+#remove-square {
+  display: inline-block;
+  background-color:white;
+  border-radius: 6px;
+  color: rgb(88, 88, 88);
+}
+

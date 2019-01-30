@@ -89,10 +89,16 @@ class SoundboardSquare extends Component {
           <form className="squareForm" onSubmit= {this.handleUploadSound}>
           {chooser}
             <div className="controls-container">
-              <div id="slider-container">
-                <Slider name="Volume" min="0" max="1" step="0.05" onChange={this.volumeChange} />
-                <Slider name="Speed" min="0.2" max="2" step="0.2" onChange={this.speedChange} />
-              </div>
+              <table id="slider-container">
+                <tr>
+                  <th>Volume</th>
+                  <Slider min="0" max="1" step="0.05" onChange={this.volumeChange} />
+                </tr>
+                <tr>
+                  <th>Speed</th>
+                  <Slider min="0.2" max="2" step="0.2" onChange={this.speedChange} />
+                </tr>
+              </table>
               <div id="play-border">
                 <button type="button" id="play" onClick= {this.playSound}></button>
               </div>
